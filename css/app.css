@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #dc3545;
+  text-align: center;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-agregar {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn-agregar:hover {
+  background-color: #218838;
+}
+
+.fa-edit {
+  cursor: pointer;
+}
+
+.fa-trash {
+  cursor: pointer;
+}

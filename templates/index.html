@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión Productos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body>
+  <h1>GESTIÓN PRODUCTOS</h1>
+  <a href="{{ url_for('agregarProducto') }}" class="btn-agregar">➕ Agregar</a>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Categoría</th>
+        <th>Foto</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in productos %}
+      <tr>
+        <td>{{ p['código'] }}</td>
+        <td>{{ p['nombre'] }}</td>
+        <td>${{ p['precio'] }}</td>
+        <td>{{ p['categoría'] }}</td>
+        <td>
+          {% if p['foto'] %}
+            <img src="{{ url_for('static', filename='imagenes/' ~ p['foto']) }}" alt="foto" width="80">
+          {% else %}
+            Sin foto
+          {% endif %}
+        </td>
+        <td>
+          <a href="{{ url_for('consultarProducto', idProducto=p['_id']) }}" class="btn-editar">✏️</a>
+          <a href="{{ url_for('eliminarProducto', idProducto=p['_id']) }}" class="btn-eliminar">🗑️</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
