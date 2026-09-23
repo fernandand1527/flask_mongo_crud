@@ -20,8 +20,6 @@ cliente = MongoClient("mongodb+srv://fernandand1527_db_user:Fer34319194*@cluster
 db = cliente["GESTIONPRODUCTOS"]
 productos = db["PRODUCTOS"]
 
-
-
 # LISTAR
 @app.route("/")
 @app.route("/listarProductos")
